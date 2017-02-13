@@ -54,18 +54,12 @@ class TestSubject < MiniTest::Test
    end
 
    def test_merge_topics
-    addSomeTopics
-     # To be completed
-     result1 = @subject.mergeTopics 'topic1'
-     result2 = @subject.mergeTopics 'topic2'
-     assert result1
-     assert result2
-     assert_nil @subject.findTopic 'topic1'
-     assert_nil @subject.findTopic 'topic2'
-     result = @subject.mergeTopics.merged 'topic X'
-     
 
-
+    
+    @subject.addTopic @topic1
+    @subject.addTopic @topic2
+    result = @subject.mergeTopics('topic 1','topic 2','merged')
+    assert result
    end
 
    def addSomeTopics
